@@ -3233,8 +3233,12 @@ reply(lang.success())
 break
 		 	case 'hidetag':
 		     case '_`':
-		if (!mek.key.fromMe && !isGroupAdmins) return reply(lang.onlyOwner())
-		     if (!isGroup) return fakegroup(lang.onlygc())
+		if (!isGroup) return reply(lang.onlygc())
+					if (!isGroupAdmins) return reply(lang.onlygcAdmin())
+					if (!isBotGroupAdmins) return reply(lang.botNotAdm())       
+			        if (!isGroup) return reply(lang.onlygc())
+					if (!isGroupAdmins) return reply(lang.onlygcAdmin())
+					if (!isBotGroupAdmins) return reply(lang.botNotAdm())
 					var value = args.join(' ')
 					var group = await alpha.groupMetadata(from)
 					var member = group['participants']
@@ -4120,7 +4124,7 @@ if (!isGroup) return reply(lang.onlygc())
 					}
 					seeer = `Nama : *${pushname}`
 					thumbb = await getBuffer(pic)
-					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${numbernye}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by zeeone 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
+					anuu  = {contextInfo:{"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant': `${numbernye}@s.whatsapp.net`, 'remoteJid': '6289523258649-1604595598@g.us', 'quotedMessage': {"imageMessage": {"caption": `「 Bot by DEFFBOTz 」`, 'jpegThumbnail': fs.readFileSync(`image/${thumbnail}`)}}}}
                     alpha.sendMessage(from, thumbb ,image, anuu)
 				}
 				await limitAdd(sender, limit)
